@@ -1,2 +1,16 @@
 <h1>Appointments#show</h1>
 <p>Find me in app/views/appointments/show.html.erb</p>
+<h2> Appointments </h2>
+<h3><%= @appointment.doctor.name %></h3>
+<ol>
+<% @appointment.doctor.appointments.each do |a| %>
+  <li>
+    <strong>Date:</strong> <%= d = a.appointment_datetime.strftime(" %B %d, %Y") %></br>
+    <strong>Time:</strong> <%= t = a.appointment_datetime.strftime(" %H:%M") %></br>
+    <strong>Patient Name:</strong> <%= link_to a.patient.name, patient_path(a.patient) %></br>
+    <strong>Patient Age:</strong> <%= a.patient.age %></br>
+    <strong>Doctor Name:</strong> <%= link_to a.doctor.name, doctor_path(a.doctor) %></br>
+  </li></br>
+<%# binding.pry %>
+<% end %>
+</ol>

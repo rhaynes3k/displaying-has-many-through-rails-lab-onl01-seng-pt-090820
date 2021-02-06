@@ -6,8 +6,11 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    @appointment = Appointment.find(params[:id])
+
   end
 
   def index
   end
+  
 end
