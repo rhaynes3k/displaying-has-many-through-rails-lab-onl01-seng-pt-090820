@@ -10,5 +10,7 @@ class PatientsController < ApplicationController
   end
 
   def index
+    @patient = Patient.all
+    #binding.pry
   end
 end
